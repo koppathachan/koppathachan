@@ -1,0 +1,7 @@
+---
+title: "About"
+date: 2020-09-17T00:25:58+05:30
+draft: false
+---
+
+Hello, I am Akhil Sasidharan. I like to code. Thankfully I also get paid to code.

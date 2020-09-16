@@ -1,4 +1,5 @@
-baseurl      = "localhost"
+baseurl      = "https://sasidakh.github.io"
+relativeURLs = true
 title        = "My Blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
@@ -11,7 +12,7 @@ paginate     = 10
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "I will always love coding..."
+  homeSubtitle = "Writes kick-ass code"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -20,13 +21,31 @@ paginate     = 10
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "My new homepage or blog"
+  description = "My Blog"
   keywords = "homepage, blog"
   images = [""]
 
   # Default theme "light" or "dark"
   defaultTheme = "dark"
+#[permalinks]
+#  posts = "/posts/:year/:month/:title/"
+  footerRight = "Github: <a href=\"https://github.com/sasidakh\">Akhil Sasidharan</a>"
 
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/sasidakh"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:akhilsasidharan1991@gmail.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/sasidakh"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/akhil-sasidharan-848853140/"
 [taxonomies]
     category = "blog"
     tag      = "tags"
@@ -35,21 +54,29 @@ paginate     = 10
 [languages]
   [languages.en]
     title = "Akhil Sasidharan"
-    subtitle = "A simple theme for Hugo"
+    subtitle = "Somthings to say"
     keywords = ""
     # copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "/home"
+      logoText = "cd ~"
       logoHomeLink = "/"
     # or
     #
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
 
-  # And you can even create generic menu
+[menu]
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+    identifier = "about"
+    name       = "About"
+    url        = "about/"
+  [[menu.main]]
+    identifier = "posts"
+    name       = "Posts"
+    url        = "posts/"
+#  [[menu.main]]
+#    identifier = "resume"
+#    name       = "Resume"
+#    url        = "resume/"
