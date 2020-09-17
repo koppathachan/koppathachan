@@ -30,6 +30,7 @@ paginate     = 10
 #[permalinks]
 #  posts = "/posts/:year/:month/:title/"
   footerRight = "Github: <a href=\"https://github.com/sasidakh\">Akhil Sasidharan</a>"
+  footerLeft  = "Powered by <a href=\"http://gohugo.io\">Hugo</a> and <a href=\"https://orgmode.org/\">Emacs Org Mode</a>"
 
   [[params.social]]
     name = "twitter"
@@ -54,7 +55,7 @@ paginate     = 10
 [languages]
   [languages.en]
     title = "Akhil Sasidharan"
-    subtitle = "Somthings to say"
+    subtitle = "Somethings to say"
     keywords = ""
     # copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"

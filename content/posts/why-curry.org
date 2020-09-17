@@ -3,7 +3,7 @@ title: "Why Currying"
 date: 2020-09-16T21:07:46+05:30
 draft: false
 ---
-Currying is the transformation of function written like this
+Currying is the transformation of a function written like this
 #+Name: EgCurry
 #+BEGIN_SRC js
 const add = (a, b) => a+b;
