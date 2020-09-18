@@ -1,10 +1,10 @@
-baseurl      = "https://sasidakh.github.io"
+baseurl      = "https://akhilsasidharan.in"
 relativeURLs = true
 title        = "My Blog"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 paginate     = 10
-
+disqusShortname = "akhilsasidharan-in"
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -48,9 +48,9 @@ paginate     = 10
     name = "linkedin"
     url  = "https://www.linkedin.com/in/akhil-sasidharan-848853140/"
 [taxonomies]
-    category = "blog"
+    category = "categories"
     tag      = "tags"
-    series   = "series"
+#    series   = "series"
 
 [languages]
   [languages.en]
@@ -77,7 +77,7 @@ paginate     = 10
     identifier = "posts"
     name       = "Posts"
     url        = "posts/"
-#  [[menu.main]]
-#    identifier = "resume"
-#    name       = "Resume"
-#    url        = "resume/"
+  [[menu.main]]
+    identifier = "work"
+    name       = "Work"
+    url        = "work/"

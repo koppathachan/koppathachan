@@ -2,6 +2,8 @@
 title: "Go. Weird And Awesome."
 date: 2020-05-16T21:23:40+05:30
 draft: false
+categories: ["Programming"]
+tags: ["golang", "opinion", "experience", "basicprogramming", "go"]
 ---
 November 10th, 2019 marked the 10th anniversary of this awesome programming language called Go. The Go community in Bangalore organized a meetup (which was also their 50th meetup) hosted by SAP Labs. The meetup introduced me to gRPC and writing custom plugins for gRPC. The meetup also introduced me to how the Go runtime scheduler works and how it has achieved high performance concurrency. I was just a beginner in Go and starting to fall in love with the language, and knowing the genesis story of Go helped me understand some of the weirdness I felt about the language initially.
 After starting with some basic programming in Go (creating a basic http server and some middleware), the language grew on me and quickly became my favourite programming language. The designers of Go set out to create a fast, productive, and fun programming language, and that's exactly what they did. Let's take a brief tour through some of my learning and experiences.

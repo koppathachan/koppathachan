@@ -1,0 +1,46 @@
+---
+title: "Work"
+date: 2020-09-18T17:19:21+05:30
+draft: false
+---
+*** Technical Lead, In Time Tec Visionsoft Pvt Ltd.
+*** Senior Software Engineer, In Time Tec Visionsoft Pvt Ltd
+
+Project Cartos: A fleet visualisation and optimisation tool. Primary
+used in the MPS domain for managing printers on a floor. Users can
+upload a floor map and plot assets. Assets are imported via csv and
+can be dragged and dropped onto the floor and visualise the entire
+fleet. Users can generate multiple reports and export the designed
+floor.
+
+UI is implemented in Angularjs/Angular. Backend is a cluster
+of microservices which are in Node + Express, Java Spring Boot, .NET
+Core, GoLang and Django.  Mongodb and MySQL are used as Databases.  My
+responsibilities include architecting and designing features and
+improvements to to existing systems, formal mentoring, reviewing code
+and design documents.
+**** Somethings I contributed to while at Intimetec:
+    + Architected and implemented a new framework for offline support
+      using offlinets with IndexedDb and Service Worker caching.
+    + Implemented an isomorphic Core API module using dependencyjs.
+    + Designed and Implemented an Isomorphic a Data Access Object that
+      allows for a common data access layer in the frontend and
+      backend.
+    + Designed and Implemented an Isomorphic html5 canvas module that
+      can generate maps in the backend and frontend using konvajs.
+    + Created a framework using kops, helm and helmsman for moving
+      application stack to kubernetes. Also worked on creating minimal
+      base docker images for applications.
+    + Setup and test Linux OSs to move development to Linux.
+
+**** Events:
+    + Organised multiple hands on technology workshops in the office.
+    + Organised first company wide hackathon.
+*** System/Software Engineer, HP (India) Software Operations
+    + .NET MVC3 project Express Digital Portal(EDP) for channel
+      partners to manage their MPS business.
+    
+** My tiny open source contributions
+    + [[https://www.npmjs.com/package/offlinets][offlinets]]
+    + [[https://www.npmjs.com/package/dependencyjs][dependencyjs]]
+    + [[https://github.com/InTimeTecGitHub/kubeter][kubeter]]

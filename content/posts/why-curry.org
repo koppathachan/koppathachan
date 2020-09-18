@@ -2,6 +2,8 @@
 title: "Why Currying"
 date: 2020-09-16T21:07:46+05:30
 draft: false
+categories: ["Programming"]
+tags: ["currying", "functionalprogramming", "js", "javascript", "lambda"]
 ---
 Currying is the transformation of a function written like this
 #+Name: EgCurry
