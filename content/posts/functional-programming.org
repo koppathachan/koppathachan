@@ -12,7 +12,7 @@ programming is the way to go. I was intrigued and so, I read about it
 and found out that it was based on lambda calculus and was even more
 intrigued because it said “calculus”.
 
-The mathematical definition of function is 'a relationship between two
+The mathematical definition of a function is 'a relationship between two
 sets of values such that every element in the first set has a unique
 value in the second set'.
 
@@ -29,7 +29,7 @@ These functions are called *pure functions* in computer science. A
 pure function is a function where the return value is determined by
 only its input values without any observable *side effects*. If you
 look at the second example above cos(x) will always return the same
-value for a given x.
+value for a given x. For example.
 #+Name: EgPF
 #+BEGIN_SRC js
   const add = (a, b) => a+b;
@@ -50,10 +50,10 @@ always remain the same it can be saved for future evaluations and can
 speed up expensive function evaluations.
 
 In maths a variable x once assigned a value does not change. That is
-to say that when a variable x = 1 it cannot be reassigned to x = 3 or
+to say that when a variable x = 1, it cannot be reassigned to x = 3 or
 we cannot mutate x to be ++x. Such an expression would be absurd to a
-mathematician. We follow the same in functional programming and it is
-called *immutability*.
+mathematician. We follow the same rule in functional programming and
+it is called *immutability*.
 
 #+Name: EgPFImmutable
 #+BEGIN_SRC js
