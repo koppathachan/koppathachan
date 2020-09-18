@@ -8,45 +8,45 @@ tags: ["currying", "functionalprogramming", "js", "javascript", "lambda"]
 Currying is the transformation of a function written like this
 #+Name: EgCurry
 #+BEGIN_SRC js
-const add = (a, b) => a+b;
-add(3, 4) // = 7
+  const add = (a, b) => a+b;
+  add(3, 4) // = 7
 #+END_SRC
 
 Into this
 #+Name: EgCurry
 #+BEGIN_SRC js
-const add = a => b => a+b;
-add(3)(4) // = 7
+  const add = a => b => a+b;
+  add(3)(4) // = 7
 #+END_SRC
 
 Which allows me to do this.
 #+Name: EgCurry
 #+BEGIN_SRC js
-const add = a => b => a+b;
-const add3 = add(3); // this can be read as 3 + b;
-add3(1) // = 4
+  const add = a => b => a+b;
+  const add3 = add(3); // this can be read as 3 + b;
+  add3(1) // = 4
 #+END_SRC
 Here I partially applied 3 to the function add to get add3 a specific function that adds 3 to its input.
 
 You can compose functions like these.
 #+Name: EgCurry2
 #+BEGIN_SRC js
-const longerThan = n => word => word.length > n;
-const words = ['something', 'schadenfreude', 'ambivalent', 
-    'good', 'bad', 'preposterous'];
-const find = words => lengthCond => words.filter(lengthCond);
-find(words)(longerThan(7));
+  const longerThan = n => word => word.length > n;
+  const words = ['something', 'schadenfreude', 'ambivalent', 
+      'good', 'bad', 'preposterous'];
+  const find = words => lengthCond => words.filter(lengthCond);
+  find(words)(longerThan(7));
 #+END_SRC
 Now that just reads 'find words longer than seven'.
 #+Name: EgCurry2
 #+BEGIN_SRC js
-const greet = message => name => `${message} ${name}!`;
-const sayHelloTo = greet('Hello');
-sayHelloTo('Akhil'); // Hello Akhil!
-const sayWelcomeTo = greet('Welcome');
-sayWelcomeTo('Mamta'); // Welcome Mamta!
-const sayGoodDayTo = greet('Good Day');
-sayGooddayTo('Ritika'); // Good Day Ritika!
+  const greet = message => name => `${message} ${name}!`;
+  const sayHelloTo = greet('Hello');
+  sayHelloTo('Akhil'); // Hello Akhil!
+  const sayWelcomeTo = greet('Welcome');
+  sayWelcomeTo('Mamta'); // Welcome Mamta!
+  const sayGoodDayTo = greet('Good Day');
+  sayGoodDayTo('Ritika'); // Good Day Ritika!
 #+END_SRC
 
 It's easy on the eyes isn't it.
@@ -54,15 +54,15 @@ It's easy on the eyes isn't it.
 I especially like this:
 #+Name: EgCurry3
 #+BEGIN_SRC js
-const double = x => x * 2;
-const triple = x => x * 3;
-// This is a bit tricky to read admittedly, but look what it produces
-const pipe = (...fns) => n => fns.reduce((total, f) => f(total), n);
-const doubler = pipe(double); // same as double
-const quadrupler = pipe(double, double);
-const sextuple = pipe(double, triple);
-quadrupler(3); // 12
-sextuple(5); // 30
+  const double = x => x * 2;
+  const triple = x => x * 3;
+  // This is a bit tricky to read admittedly, but look what it produces
+  const pipe = (...fns) => n => fns.reduce((total, f) => f(total), n);
+  const doubler = pipe(double); // same as double
+  const quadrupler = pipe(double, double);
+  const sextuple = pipe(double, triple);
+  quadrupler(3); // 12
+  sextuple(5); // 30
 #+END_SRC
 
 This is called composition.
@@ -70,10 +70,10 @@ This is called composition.
 Here's another fun one.
 #+Name: EgCurry4
 #+BEGIN_SRC js
-const subString = start => len => str => str.substr(start, len);
-const lowerCase = str => str.toLowerCase();
-const firstCharacter = str => substring(0)(1)(str);
-const firstCharacterAsLower = str => lowerCase(firstCharacter(str));
+  const subString = start => len => str => str.substr(start, len);
+  const lowerCase = str => str.toLowerCase();
+  const firstCharacter = str => substring(0)(1)(str);
+  const firstCharacterAsLower = str => lowerCase(firstCharacter(str));
 #+END_SRC
 
 In conclusion, currying if used properly makes code really readable and can produce powerful abstractions through compositions and partial application of functions. I will explore partial application examples in my next post.

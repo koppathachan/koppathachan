@@ -77,7 +77,3 @@ disqusShortname = "akhilsasidharan-in"
     identifier = "posts"
     name       = "Posts"
     url        = "posts/"
-  [[menu.main]]
-    identifier = "work"
-    name       = "Work"
-    url        = "work/"
