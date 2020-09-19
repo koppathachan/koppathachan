@@ -28,7 +28,7 @@ second set.
 These functions are called *pure functions* in computer science. A
 pure function is a function where the return value is determined by
 only its input values without any observable *side effects*. If you
-look at the second example above cos(x) will always return the same
+look at the second example above cos(x), will always return the same
 value for a given x. For example.
 #+Name: EgPF
 #+BEGIN_SRC js
@@ -122,3 +122,5 @@ reduce function.
 						       //reduce function
 #+END_SRC
 Higher-order functions are essential to writing correct functional code.
+
+I hope this helps in writing better code.
