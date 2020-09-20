@@ -61,8 +61,8 @@ wished it had the charming good looks of its recursive counterpart to
 go with its dashing performance. The wish was granted; we
 have memoization.
 
-But first let me show you why the recursive version is slow by
-calculating the fibonacci value of 5. fib(5).
+But first let me show you what happens while calculating the fibonacci
+value of 5. fib(5).
 
 #+Name: Fib5Tree
 #+BEGIN_SRC ditaa
