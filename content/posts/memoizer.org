@@ -9,12 +9,12 @@ tags: ["functionalprogramming", "js", "javascript", "memoization", "memoize", "r
 Memoization is an *optimization technique* used in functional
 programming to speed up execution by storing the results of resource
 expensive function calls. When the function is called again with the
-same input the result is fetched from the cache and returned. This
-is possible in functional programming languages because of the use of
+same input the result is fetched from the cache and returned. This is
+possible in functional programming languages because of the use of
 *pure functions* as discussed in this [[https://akhilsasidharan.in/posts/functional-programming/][post]]. Purely functional
-languages such as Haskell has inbuilt support for
-memoization. However, in languages like javascript using a mutable map
-(object, map, caches) we can implement a memoization.
+languages such as Haskell has inbuilt support for memoization. In
+javascript, using a mutable map (object, map, caches) we can implement
+a memoization.
 
 Memoization is especially useful in recursive functions. Writing code
 the functional way makes my code expressive and testable. However, as
@@ -58,7 +58,7 @@ this.
 #+END_SRC
 It doesn't look anything like its mathematical representation. I
 wished it had the charming good looks of its recursive counterpart to
-go with its dashing performance. However, the wish was granted; we
+go with its dashing performance. The wish was granted; we
 have memoization.
 
 But first let me show you why the recursive version is slow by
