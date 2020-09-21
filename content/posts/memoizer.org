@@ -57,7 +57,7 @@ this.
 #+END_SRC
 It doesn't look anything like its mathematical representation. I
 wished it had the charming good looks of its recursive counterpart to
-go with its dashing performance. The wish was granted; we
+go with its dashing performance. That wish was granted; we
 have memoization.
 
 But first let me show you what happens while calculating the fibonacci
