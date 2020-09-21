@@ -3,18 +3,17 @@ title: "Memoization"
 date: 2020-09-20T23:50:30+05:30
 draft: false
 categories: ["Programming"]
-tags: ["functionalprogramming", "js", "javascript", "memoization", "memoize", "recursion"]
+tags: ["functionalprogramming", "js", "javascript", "memoization", "memoize", "recursion", "memoizer"]
 ---
 
 Memoization is an *optimization technique* used in functional
 programming to speed up execution by storing the results of resource
 expensive function calls. When the function is called again with the
-same input the result is fetched from the cache and returned. This is
-possible in functional programming languages because of the use of
-*pure functions* as discussed in this [[https://akhilsasidharan.in/posts/functional-programming/][post]]. Purely functional
-languages such as Haskell has inbuilt support for memoization. In
-javascript, using a mutable map (object, map, caches) we can implement
-a memoization.
+same input the stored result is fetched and returned. This is possible
+in functional programming languages because of the use of *pure
+functions* as discussed in this [[https://akhilsasidharan.in/posts/functional-programming/][post]]. Purely functional languages such
+as Haskell has inbuilt support for memoization. In javascript, using a
+mutable map (object, map, caches) we can implement a memoization.
 
 Memoization is especially useful in recursive functions. Writing code
 the functional way makes my code expressive and testable. However, as
