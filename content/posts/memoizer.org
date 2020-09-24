@@ -1,5 +1,5 @@
 ---
-title: "Memoization"
+title: "Memoization, with a js implementation that caches recursive calls."
 date: 2020-09-20T23:50:30+05:30
 draft: false
 categories: ["Programming"]
@@ -48,9 +48,9 @@ this.
       let a = 0, b = 1, c, i;
       if (n == 0) return a;
       for (i = 2; i <= n; i++) {
-	  c = a + b;  // We violate immutability rule here
-	  a = b;      // and here
-	  b = c;      // and here
+      c = a + b;  // We violate immutability rule here
+      a = b;      // and here
+      b = c;      // and here
       }
       return b;
   };
@@ -130,8 +130,11 @@ implementations to memoize any function like this.
 #+END_SRC
 But they do not cache intermediate results like we saw above in the
 custom implementation. While I do like custom implementations over a
-generic solution for this I attempted a generic solution that caches
-intermediate values. 
+generic solution, I attempted a generic solution that caches
+intermediate values. That is, if I call fib(5) the memoized value of
+fib(5) will cache fib(4), fib(3), fib(2), fib(1), fib(0) before the
+function fib(5) has returned, which is speeds up some recursive
+functions.
 
 #+Name: EgMemoizedFib
 #+BEGIN_SRC js
