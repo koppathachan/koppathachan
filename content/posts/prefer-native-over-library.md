@@ -1,11 +1,16 @@
----
-title: "Why use native Promise over Bluebird and other implementations?"
-date: 2020-10-07T03:58:43+05:30
-draft: false
----
-#+BEGIN_QUOTE 
-'Brevity is the soul of wit'
-#+END_QUOTE
++++
+title = "Why use native Promise over Bluebird and other implementations"
+author = ["Akhil Sasidharan"]
+date = 2020-10-07T03:58:43+05:30
+lastmod = 2021-03-07T22:18:53+05:30
+tags = ["js", "javascript", "utilfunctions", "programmingbasics"]
+categories = ["programming"]
+draft = false
+weight = 2005
++++
+
+> 'Brevity is the soul of wit'
+
 We owe shakespeare the credit for this enduring idiom. The context of
 this quote is often lost in its contemporary usage. I am going to
 ignore it too, and use it to simply mean 'intelligence or humour is best
@@ -26,15 +31,15 @@ such trivial things. For instance, consider the lodash method
 isEmpty(value). lodash.isEmpty(value) looks for all falsey values. Why
 must it.
 
-#+Name: Eg1
-#+BEGIN_SRC js
+<a id="code-snippet--Eg1"></a>
+{{< highlight js "linenos=table, linenostart=1" >}}
   const isEmpty = arr => arr.length === 0 || Object.keys(arr).length === 0;
-#+END_SRC
+{{< /highlight >}}
 
 In most cases its input will be an object or an array. That's readable
 and brief. Why must a function that checks if an object is empty,
-recieve say, a number. *It is a violation of the Liskov Substitution
-Principle aka LSP*.
+recieve say, a number. **It is a violation of the Liskov Substitution
+Principle aka LSP**.
 
 Another common use case is for Promise. Promises were introduced in
 es6 (ES2015). Before that other libraries like Bluebird were
@@ -51,8 +56,8 @@ approach and in those instances I prefer a custom solution.
 Nonetheless, I was interested in a generic solution for Promise.map
 using modern javscript. Here's what I came up with.
 
-#+Name: Eg2
-#+BEGIN_SRC js
+<a id="code-snippet--Eg2"></a>
+{{< highlight js "linenos=table, linenostart=1" >}}
 
   // partition the data into groups of length given by concurrency.
   const partition = (data, concurrency) => Array.from({
@@ -70,27 +75,26 @@ using modern javscript. Here's what I came up with.
   ) => async (
     data, mapper
   ) => partition(data, concurrency).reduce(mapReduce(mapper), []);
-
-#+END_SRC
+{{< /highlight >}}
 
 The above code is simple, follows functional programming paradigm
-using modern javascript. 
+using modern javascript.
 
 Another irritating example is that of the lodash get method. It allows
 us to do this:
 
-#+Name: Eg3
-#+BEGIN_SRC js
+<a id="code-snippet--Eg3"></a>
+{{< highlight js "linenos=table, linenostart=1" >}}
   const object = { 'a': [{ 'b': { 'c': 3 } }] };
   get(object, 'a[0].b.c'); // 3
   // and you can pass a default value if the path is not found.
   get(object, 'a.b.c', 'default'); // 'default'
-#+END_SRC
+{{< /highlight >}}
 
 In the off chance that I have to use this function, I prefer this.
 
-#+Name: Eg3
-#+BEGIN_SRC js
+<a id="code-snippet--Eg3"></a>
+{{< highlight js "linenos=table, linenostart=1" >}}
   const makeGet = (def) => (
     obj, ...ks
   ) => ks.slice(1).reduce((
@@ -102,7 +106,7 @@ In the off chance that I have to use this function, I prefer this.
   get(object, 'a', 0, 'b', 'c'); // 3
 
   get(object, 'a', 0, 'b', 'a'); // 'default'
-#+END_SRC
+{{< /highlight >}}
 
 It doesn't take much effort to parse 'a[0].b.c' into the arguments of
 this function.

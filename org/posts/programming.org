@@ -1,0 +1,607 @@
+#+HUGO_BASE_DIR: ../../
+#+HUGO_SECTION: ./posts
+#+HUGO_WEIGHT: auto
+#+HUGO_AUTO_SET_LASTMOD: t
+
+* Programming :@programming:
+All posts here will have category /programming/.
+** Go. Weird And Awesome :golang:go:programmingbasics:
+:PROPERTIES:
+:EXPORT_DATE: 2020-05-16T21:23:40+05:30
+:EXPORT_FILE_NAME: learning-golang
+:END:
+November 10th, 2019 marked the 10th anniversary of this awesome programming language called Go. The Go community in Bangalore organized a meetup (which was also their 50th meetup) hosted by SAP Labs. The meetup introduced me to gRPC and writing custom plugins for gRPC. The meetup also introduced me to how the Go runtime scheduler works and how it has achieved high performance concurrency. I was just a beginner in Go and starting to fall in love with the language, and knowing the genesis story of Go helped me understand some of the weirdness I felt about the language initially.
+After starting with some basic programming in Go (creating a basic http server and some middleware), the language grew on me and quickly became my favourite programming language. The designers of Go set out to create a fast, productive, and fun programming language, and that's exactly what they did. Let's take a brief tour through some of my learning and experiences.
+I have taken less time to learn Go than any other programming language. It has ~25 keywords, but it can do so much. It is garbage collected, compiled, statically typed, and has a small build time. It compiles to machine code, so it performs like C.
+Many languages avoid enforcing semicolons at the end of a statement. Go, following in the path of C, does enforce semicolons to terminate statements but doesn't bother developers with it. They insert one when Go code is compiled and they have defined rules for it. You can add it yourself too, but idiomatic Go avoids it. One consequence of this decision is that braces for control structures (if, for, switch, and select) should be on the same line and not on a new line, which adds to the readability of Go. Programmers do not have to make rules instructing how and where braces are used.
+I remember learning to code (in C++), and missing to add break statements in my switch cases and thinking, "that's not intuitive". I think, as a beginner to coding, those were the most irritating logical errors I have had to debug. The fall through behavior that is common in all programming languages (except python, which does not have a switch case) is useful sometimes. However, since it is not intuitive, I guess every programmer would have made the mistake of missing that break statement. Go switch cases do not fall through unless you want to (using the "fallthrough" keyword) and I like that.
+
+#+NAME: Switch
+#+BEGIN_SRC go -n
+package main
+
+import (
+   "fmt"
+)
+
+func main() {
+   fmt.Print("Go runs on ")
+   switch 2 {
+   case 1:
+	fmt.Println("1")
+	fallthrough
+   case 2:
+        fmt.Println("2")
+	fallthrough
+   case 3:
+	fmt.Println("3")
+   }
+}
+#+END_SRC
+
+Go also renames the while loop. Like the Go tour specifies "C's while is spelled for in Go." One less keyword to remember.
+Go's concurrency model involves using Goroutines. Goroutines can be thought of as lightweight threads. They take very little stack space and the stack can grow and shrink according to program requirements. A program may just have one OS thread but a thousand Goroutines. Moreover, if one of the Goroutines is blocking, then the Go runtime moves all the other Goroutines into a newly spawned OS thread. All of this is done automatically by the Go runtime. Goroutines communicate using channels, which are special data structures. Channels can be buffered and Goroutines can push and pull data from it.
+
+#+NAME: While
+#+BEGIN_SRC go -n
+package main
+
+import "fmt"
+
+func main() {
+
+    messages := make(chan string)
+
+    go func() { messages <- "ping" }()
+
+    msg := <-messages
+    fmt.Println(msg)
+}
+#+END_SRC
+
+Go is not intuitively Object Oriented. One of the main reasons for this is because it does not support inheritance. This is not by accident, but an intentional design choice. Go considers inheritance of the classical style fragile. Instead, it uses Composition. In my opinion, Go is responsibly Object Oriented. I have often noticed that, programmers write code, using languages like Java and C# where there is only one way (OO way), but still don't achieve OO programs. With Go, you can have methods on any type, not just structures. Go interfaces are just a set of methods and you can compose an interface with multiple types that satisfy these interfaces and any other type that satisfies the whole interface.
+
+#+NAME: Object Oriented
+#+BEGIN_SRC go -n
+package main
+
+import (
+  "fmt"
+)
+
+type author struct {
+  firstName string
+  lastName  string
+  bio       string
+}
+
+//a method on the struct author
+func (a author) fullName() string {
+  return fmt.Sprintf("%s %s", a.firstName, a.lastName)
+}
+
+//author is embedded in struct post
+type post struct {
+  title     string
+  content   string
+  author
+}
+
+//details is attached on post
+func (p post) details() {
+  fmt.Println("Title: ", p.title)
+  fmt.Println("Content: ", p.content)
+  //can be accessed directly
+  fmt.Println("Author: ", p.fullName())
+  //can be accessed with the struct name also.
+  fmt.Println("Bio: ", p.author.bio)
+}
+#+END_SRC
+
+Go supports encapsulation at the package level. Exported methods in Go start with a capital letter, and that is one of the things that makes Go so readable. This is perhaps what I like most about Go syntax. Like other languages, we are not burdened with the decision of choosing between camel cases or pascal cases. Go makes it for us.
+
+#+NAME: Encapsulation
+#+BEGIN_SRC go -n
+package math
+
+//add function is public.
+//access it outside the package like so:
+// math.Add(4,5)
+func Add(a int, b int) int {
+	return a + b;
+}
+
+//not accessible outside the package math.
+func addPrint(a int, b int) {
+	fmt.Println(Add(a,b))
+}
+#+END_SRC
+
+At work we decided, after much deliberation and debate, to use Go for one of our data processing microservices (Go concurrency model and performance benchmarks won the debate). We were designing a live data collection agent(for Managed Print Services) which consumed a huge amount of JSON data(about printers and their print count, cost etc.) from multiple paged REST APIs, categorised them based on various parameters, stored them and presented it. When we did some googling comparing Apache Spark and a custom solution in Go, we found that even though development effort for spark was lesser, the Go solution would perform better, was simpler and more efficient. The first thing that struck me was that Go is just a programming language(spark is a framework) and it was still easy to build data processing pipelines with just language constructs.
+I have come to describe OO Go as "Responsible Object Oriented Programming", because it has truly bettered the way I write OO code. When it comes to concurrency, the amazing Goroutines has made me responsible as well as fearless in my coding. I would make Go my top choice just for its general purposiveness, small learning curve, and its refreshing take on object oriented programming.
+
+** Why currying? :currying:functionalprogramming:lambdacalculus:javascript:js:
+:PROPERTIES:
+:EXPORT_DATE: 2020-09-16T21:07:46+05:30
+:EXPORT_FILE_NAME: why-curry
+:END:
+Currying is the transformation of a function written like this
+#+Name: EgCurry
+#+BEGIN_SRC js -n 1
+  const add = (a, b) => a+b;
+  add(3, 4) // = 7
+#+END_SRC
+
+Into this
+#+Name: EgCurry
+#+BEGIN_SRC js -n 1
+  const add = a => b => a+b;
+  add(3)(4) // = 7
+#+END_SRC
+
+Which allows me to do this.
+#+Name: EgCurry
+#+BEGIN_SRC js -n 1
+  const add = a => b => a+b;
+  const add3 = add(3); // this can be read as 3 + b;
+  add3(1) // = 4
+#+END_SRC
+Here I partially applied 3 to the function add to get add3 a specific function that adds 3 to its input.
+
+You can compose functions like these.
+#+Name: EgCurry2
+#+BEGIN_SRC js -n 1
+  const longerThan = n => word => word.length > n;
+  const words = ['something', 'schadenfreude', 'ambivalent',
+      'good', 'bad', 'preposterous'];
+  const find = words => lengthCond => words.filter(lengthCond);
+  find(words)(longerThan(7));
+#+END_SRC
+Now that just reads 'find words longer than seven'.
+#+Name: EgCurry2
+#+BEGIN_SRC js -n 1
+  const greet = message => name => `${message} ${name}!`;
+  const sayHelloTo = greet('Hello');
+  sayHelloTo('Akhil'); // Hello Akhil!
+  const sayWelcomeTo = greet('Welcome');
+  sayWelcomeTo('Mamta'); // Welcome Mamta!
+  const sayGoodDayTo = greet('Good Day');
+  sayGoodDayTo('Ritika'); // Good Day Ritika!
+#+END_SRC
+
+It's easy on the eyes isn't it.
+
+I especially like this:
+#+Name: EgCurry3
+#+BEGIN_SRC js -n 1
+  const double = x => x * 2;
+  const triple = x => x * 3;
+  // This is a bit tricky to read admittedly, but look what it produces
+  const pipe = (...fns) => n => fns.reduce((total, f) => f(total), n);
+  const doubler = pipe(double); // same as double
+  const quadrupler = pipe(double, double);
+  const sextuple = pipe(double, triple);
+  quadrupler(3); // 12
+  sextuple(5); // 30
+#+END_SRC
+
+This is called composition.
+
+Here's another fun one.
+#+Name: EgCurry4
+#+BEGIN_SRC js -n 1
+  const subString = start => len => str => str.substr(start, len);
+  const lowerCase = str => str.toLowerCase();
+  const firstCharacter = str => substring(0)(1)(str);
+  const firstCharacterAsLower = str => lowerCase(firstCharacter(str));
+#+END_SRC
+
+In conclusion, currying if used properly makes code really readable and can produce powerful abstractions through compositions and partial application of functions. I will explore partial application examples in my next post.
+
+** Functional Programming :currying:functionalprogramming:lambdacalculus:javascript:js:
+:PROPERTIES:
+:EXPORT_DATE: 2020-09-18T19:13:+05:30
+:EXPORT_FILE_NAME: functional-programming
+:END:
+I’ve been going through some functional programming concepts because
+I’m on a quest to write better code, and someone told me functional
+programming is the way to go. I was intrigued and so, I read about it
+and found out that it was based on lambda calculus and was even more
+intrigued because it said “calculus”.
+
+The mathematical definition of a function is 'a relationship between two
+sets of values such that every element in the first set has a unique
+value in the second set'.
+
+Examples:
+- f(x) = x^2 + 1
+- f(x) = cos(x)
+- f(x) = mother of x
+- f(x) = xx
+- f(x) ={ |x| | x ∈ N }, where N is the set of natural numbers.
+The values of x makes the first set and the evaluated values makes the
+second set.
+
+These functions are called *pure functions* in computer science. A
+pure function is a function where the return value is determined by
+only its input values without any observable *side effects*. If you
+look at the second example above cos(x), will always return the same
+value for a given x. For example.
+#+Name: EgPF
+#+BEGIN_SRC js -n
+  const add = (a, b) => a+b;
+  add(3, 4) // = 7
+#+END_SRC
+Same function with a side effect.
+#+Name: EgPFSideEffect
+#+BEGIN_SRC js -n
+  const add = (a, b) => {
+    console.log(`adding ${a} and ${b}.`); // this is a side effect.
+    return a+b;
+  }
+  add(3, 4) // = 7
+#+END_SRC
+Pure functions are very useful in a special kind of optimisation
+called *memoization*. Since for a given value x the value of f(x) will
+always remain the same it can be saved for future evaluations and can
+speed up expensive function evaluations.
+
+In maths a variable x once assigned a value does not change. That is
+to say that when a variable x = 1, it cannot be reassigned to x = 3 or
+we cannot mutate x to be ++x. Such an expression would be absurd to a
+mathematician. We follow the same rule in functional programming and
+it is called *immutability*.
+
+#+Name: EgPFImmutable
+#+BEGIN_SRC js -n
+  const options = { param1: 100 };
+  const addParam2 = opts => {
+    opts.param2 = 200;
+    return opts;
+  }
+  console.log(addParam2(options)) // { param1: 100, param2: 200 }
+  console.log(options) // { param1: 100, param2: 200 }
+#+END_SRC
+
+In the above snippet addParam2 function changes the options variable so any
+code that uses the options variable after will produce incosistent
+values. Using variables this way will also force us to keep track of
+all the changes to variables, which is a terrible debugging nightmare.
+
+Instead do this:
+#+Name: EgPFImmutable
+#+BEGIN_SRC js -n
+  const options = { param1: 100 };
+  const addParam2 = opts => ({ param2: 200, ...opts });
+  console.log(addParam2(options)) // { param1: 100, param2: 200 }
+  console.log(options) // { param1: 100 }
+#+END_SRC
+
+Immutability is important because in an expression such as the following;
+#+Name: EgPFImmutable2
+#+BEGIN_SRC js -n
+  const sq = x => x ** 2;
+  const equation = x => 3 * sq(x) + 5 * x + 6 // ax^2 + bx + c
+  equation(5); // = 106
+#+END_SRC
+If we replace equation(5) with its value 106 it does not change the
+behaviour of the program in anyway. Such expressions are said to be
+*referentially transparent*.
+
+In functional programming paradigm functions are first-class which
+means they are treated like any other variable. They can be passed to
+a function or returned from a function. Such functions are called
+*Higher-Order functions*.
+
+#+Name: EgPFHigherOrder
+#+BEGIN_SRC js -n
+  const makeAdjectifier = adjective => noun => `${adjective} ${noun}`;
+  const coolifier = makeAdjectifier('cool');
+  console.log(coolifier('cat')); //cool cat
+#+END_SRC
+
+Consider this program to find the sum of a list of numbers.
+#+Name: EgPFHigherOrder
+#+BEGIN_SRC js -n
+  const arr = [ 100, 20, 40, 60, 10, 70 ];
+  var sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i]; // we violate the immutability rule here.
+  }
+#+END_SRC
+As you can see we are adding to the variable sum at every iteration
+and mutating the value. Consider this solution using the inbuilt
+reduce function.
+#+Name: EgPFHigherOrder
+#+BEGIN_SRC js -n
+  const arr = [ 100, 20, 40, 60, 10, 70 ];
+  const sum = arr.reduce((sum, cur) => sum + curr, 0); //higher-order
+						       //reduce function
+#+END_SRC
+Higher-order functions are essential to writing correct functional code.
+
+I hope this helps in writing better code.
+** Memoization, with a js implementation that caches recursive calls :functionalprogramming:lambdacalculus:javascript:js:memoization:memoizer:recursion:fastrecursion:
+:PROPERTIES:
+:EXPORT_DATE: 2020-09-20T23:50:30+05:30
+:EXPORT_FILE_NAME: fast-recursion-using-memoizer
+:END:
+Memoization is an *optimization technique* used in functional
+programming to speed up execution by storing the results of resource
+expensive function calls. When the function is called again with the
+same input the stored result is fetched and returned. This is possible
+in functional programming languages because of the use of *pure
+functions* as discussed in this [[https://akhilsasidharan.in/posts/functional-programming/][post]]. Purely functional languages such
+as Haskell has inbuilt support for memoization. In javascript, using a
+mutable map (object, map, caches) we can implement a memoization.
+
+Memoization is especially useful in recursive functions. Writing code
+the functional way makes my code expressive and testable. However, as
+I will demonstrate now, in javascript (and most other impure
+functional languages) recursion is horrendously slow. Recursion is
+essential to functional programming.
+
+Let's look at the *fibonacci series*. The mathematical formula of
+which is,
+
+F_{n} = F_{n-1} + F_{n-2}, where F_{0} = 0, F_{1} = 1
+
+or
+
+F_{n} = F_{n-1} + F_{n-2}, when n > 1, and
+
+F_{n} = n, when n <= 1
+
+Looking at this equation one can see why recursive function appeals
+here. Look at the analogous js code.
+#+Name: EgFibRec
+#+BEGIN_SRC js
+  const fib = (n) => n > 1 ? fib(n - 1) + fib(n - 2) : n;
+#+END_SRC
+To calculate the fibonacci of 40 the above function took more than a
+second. Beyond fibonacci of 50 the output depends on what video I am
+playing on my laptop. The non recursive but super fast code looks like
+this.
+#+Name: EgFib
+#+BEGIN_SRC js -n
+  const uglyFib = (n) => {
+      let a = 0, b = 1, c, i;
+      if (n == 0) return a;
+      for (i = 2; i <= n; i++) {
+      c = a + b;  // We violate immutability rule here
+      a = b;      // and here
+      b = c;      // and here
+      }
+      return b;
+  };
+#+END_SRC
+It doesn't look anything like its mathematical representation. I
+wished it had the charming good looks of its recursive counterpart to
+go with its dashing performance. That wish was granted; we
+have memoization.
+
+But first let me show you what happens while calculating the fibonacci
+value of 5. fib(5).
+
+#+Name: Fib5Tree
+#+BEGIN_SRC
+fib(5)
+|
++--fib(4)
+|  |
+|  +--fib(3)-------------------------------1
+|  |  |                                    |
+|  |  +--fib(2)-----------------1          |
+|  |  |  |                      |          |
+|  |  |  *--fib(1)              |          |
+|  |  |  |                      |          |
+|  |  |  *--fib(0)              |          |
+|  |  |                         |          |
+|  |  +--fib(1)                 |          |
+|  |                            |          |
+|  +--fib(2)--------------------2          |
+|     |                         |          |
+|     *--fib(1)                 |          |
+|     |                         |          |
+|     *--fib(0)                 |          |
++--fib(3)-----------------------|----------2
+|  |                            |
+|  +--fib(2)--------------------3
+|  |  |
+|  |  *--fib(1)
+|  |  |
+|  |  *--fib(1)
+|  |
+|  +--fib(1)
+#+END_SRC
+From the above tree we can see that fib(3) is called 2 times, fib(2)
+is called 3 times, fib(1) 6 times and fib(0) 2 times. Memoization is
+how we avoid these repeated calls by saving the result the first time
+fib(n) is called. When the result is returned its value is cached in
+an object with the key as the functions input (n in this case). This
+can be reused by subsequent calls to the function with the same input.
+
+Let's look at a basic implementation of memoization.
+#+Name: EgMemoizedFib
+#+BEGIN_SRC js -n
+  const fibonacci = (n, memo = {}) {   // provide a default object as
+				       // cache.
+    if (memo[n]) { return memo[n]; }   // looking in the cache.
+    if (n <= 1) { return 1; }
+    memo[n] = fibonacci(n - 1, memo) + // save the result and pass the
+	      fibonacci(n - 2, memo);  // cache object.
+    return memo[n];                    // return the result
+  }
+#+END_SRC
+
+The above implementation not only caches the result of fibonacci(5),
+but also intermediate results of fibonacci(4), fibonacci(3) and all
+the rest of them.
+
+Some npm modules like fast-memoize and memoize provide generic
+implementations to memoize any function like this.
+#+Name: EgMemoizedFib
+#+BEGIN_SRC js -n
+  const memoize = require('fast-memoize')
+  const fn = function (one, two, three) { /* ... */ }
+  const memoized = memoize(fn)
+  memoized('foo', 3, 'bar')
+  memoized('foo', 3, 'bar') // Cache hit
+#+END_SRC
+But they do not cache intermediate results like we saw above in the
+custom implementation. While I do like custom implementations over a
+generic solution, I attempted a generic solution that caches
+intermediate values. That is, if I call fib(5) the memoized value of
+fib(5) will cache fib(4), fib(3), fib(2), fib(1), fib(0) before the
+function fib(5) has returned, which is speeds up some recursive
+functions.
+
+#+Name: EgMemoizedFib
+#+BEGIN_SRC js -n
+  export const memoize = (func, cache = Object.create(null)) => {
+
+  // here we do some magic to sanitize body and arguments recieved from
+  // the func.toString() call. Then we return a new function as shown
+  // below.
+
+    return new Function('cache',
+  `
+  return function ${func.name} (${args}) {
+    let result = cache[JSON.stringify([${args}])]
+    if (result) { return result; }
+    result = ${body}
+    cache[JSON.stringify([${args}])] = result;
+    return result;
+  }
+  `)(cache);
+  };
+#+END_SRC
+Not an elegant solution admittedly, but it does the job, given the
+limitations of javascript. You can explore the full code at
+https://github.com/sasidakh/memoizer.
+
+I tested this implementation where the fibonacci of 40 was calculated
+and it was only 4 times slower (the first time it was called) than its
+non recursive counter part as opposed to being nearly 40000 times
+slower.
+| Without recursion            | : | : | x               |
+| With recursion               | : | : | ~ 39000x slower |
+| Memoized recursion           | : | : | ~4x slower      |
+| Memoized recursion ran twice | : | : | ~42x faster     |
+
+*Wo-hoo! My code is faster thanks to memoization*
+
+You can run the tests on the [[https://github.com/sasidakh/memoizer][repo]] to understand it better.
+
+** Why use native Promise over Bluebird and other implementations :js:javascript:utilfunctions:programmingbasics:
+:PROPERTIES:
+:EXPORT_DATE: 2020-10-07T03:58:43+05:30
+:EXPORT_FILE_NAME: prefer-native-over-library
+:END:
+#+BEGIN_QUOTE
+'Brevity is the soul of wit'
+#+END_QUOTE
+We owe shakespeare the credit for this enduring idiom. The context of
+this quote is often lost in its contemporary usage. I am going to
+ignore it too, and use it to simply mean 'intelligence or humour is best
+expressed briefly'. I am also going to extend this quality, 'soul of wit',
+to programming.
+
+The best thing about free and open source software is that there is a
+lot of good, clean useful software to choose from to do anything.
+Consider the JavaScript ecosystem. Trivial computations like calling a
+function multiple times or getting a value from the nested object, or
+delaying a function can be done by using generic implementations in
+'lodash' package. Even implementations of native methods like forEach,
+map, filter, find are found (I guess lodash was pre es3) in
+lodash. Coming back to brevity and the soul of wit, I could not bring
+myself to include another library for such trivial things. I prefer
+custom specific implementations to generic solution especially for
+such trivial things. For instance, consider the lodash method
+isEmpty(value). lodash.isEmpty(value) looks for all falsey values. Why
+must it.
+
+#+Name: Eg1
+#+BEGIN_SRC js -n
+  const isEmpty = arr => arr.length === 0 || Object.keys(arr).length === 0;
+#+END_SRC
+
+In most cases its input will be an object or an array. That's readable
+and brief. Why must a function that checks if an object is empty,
+recieve say, a number. *It is a violation of the Liskov Substitution
+Principle aka LSP*.
+
+Another common use case is for Promise. Promises were introduced in
+es6 (ES2015). Before that other libraries like Bluebird were
+used. Bluebird even performed better than native Promises (before node
+10). However, Bluebird also has other functions like Promise.map,
+which can be easily implemented using array.map and
+async/await. Promise.map also has options like concurrency. But I
+cannot see the rationale behind importing a library to use a couple of
+its features as opposed spending 15 minutes to implement them
+yourself. Here is where that soul of wit is and this habit has made me
+a better programmer. A generic solution is not always the best
+approach and in those instances I prefer a custom solution.
+
+Nonetheless, I was interested in a generic solution for Promise.map
+using modern javscript. Here's what I came up with.
+
+#+Name: Eg2
+#+BEGIN_SRC js -n
+
+  // partition the data into groups of length given by concurrency.
+  const partition = (data, concurrency) => Array.from({
+    length: Math.ceil(data.length / concurrency)
+  }, (_, i) => data.slice(i * concurrency, (i + 1) * concurrency));
+
+  // custom mapReduce takes a mapper function
+  // that should be partially applied to return the reduce method.
+  const mapReduce = (mapper) => async (
+    result, data
+  ) => [...await result, ...await Promise.all(data.map(mapper))];
+
+  const map = (
+    concurrency = Infinity
+  ) => async (
+    data, mapper
+  ) => partition(data, concurrency).reduce(mapReduce(mapper), []);
+
+#+END_SRC
+
+The above code is simple, follows functional programming paradigm
+using modern javascript.
+
+Another irritating example is that of the lodash get method. It allows
+us to do this:
+
+#+Name: Eg3
+#+BEGIN_SRC js -n
+  const object = { 'a': [{ 'b': { 'c': 3 } }] };
+  get(object, 'a[0].b.c'); // 3
+  // and you can pass a default value if the path is not found.
+  get(object, 'a.b.c', 'default'); // 'default'
+#+END_SRC
+
+In the off chance that I have to use this function, I prefer this.
+
+#+Name: Eg3
+#+BEGIN_SRC js -n
+  const makeGet = (def) => (
+    obj, ...ks
+  ) => ks.slice(1).reduce((
+    o, k, _, kss
+  ) => (typeof o === 'object' && o[k]) || (kss.splice(1) && def), obj[ks[0]]);
+
+  const get = makeGet('default');
+
+  get(object, 'a', 0, 'b', 'c'); // 3
+
+  get(object, 'a', 0, 'b', 'a'); // 'default'
+#+END_SRC
+
+It doesn't take much effort to parse 'a[0].b.c' into the arguments of
+this function.
+
+It is always more rewarding to take some time out and implement such
+trivial functions. I've learnt a few things from that and it has
+defintely made me a better programmer.

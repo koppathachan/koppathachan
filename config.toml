@@ -35,18 +35,27 @@ disqusShortname = "akhilsasidharan-in"
   [[params.social]]
     name = "twitter"
     url  = "https://twitter.com/sasidakh"
-
+    target = "_blank"
+    
   [[params.social]]
     name = "email"
     url  = "mailto:akhilsasidharan1991@gmail.com"
-
+    target = "_blank"
+    
   [[params.social]]
     name = "github"
     url  = "https://github.com/sasidakh"
-
+    target = "_blank"
+    
   [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/akhil-sasidharan-848853140/"
+    target = "_blank"
+
+  [[params.social]]
+    name = "gpg"
+    url  = "gpg"
+    
 [taxonomies]
     category = "categories"
     tag      = "tags"
