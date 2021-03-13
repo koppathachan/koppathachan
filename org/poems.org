@@ -1,0 +1,80 @@
+#+TITLE: Poems
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: ./poems
+#+HUGO_WEIGHT: auto
+#+HUGO_AUTO_SET_LASTMOD: t
+
+* Poems :poetry:
+** Spitfire
+:PROPERTIES:
+:EXPORT_DATE: 2015-03-09
+:EXPORT_FILE_NAME: spitfire
+:END:
+#+BEGIN_VERSE
+In a land of misplaced evils
+There dwelt a creature named Spitfire,
+Who was aptly named,
+Did spit fire for
+All the world to see.
+News of this flame
+Had reached across the lands.
+The flame was hot in some lands
+While familiar in others.
+It did melt the ice in some
+Brought new life to ground.
+While in others still,
+It'd burnt weeds in the field.
+
+This land haply, fierce weeds had bounded
+And kept them safe.
+So thought the insular aborigines.
+But Spitfire flew above and saw
+Them in their misery,
+For had they rivers flowing,
+Beyond the bound of weeds
+Whose waters be used to tend
+And fish be caught to eat.
+For had they maples and oaks
+Beyond the denizens tranquil,
+Whose wood be used to shelter
+And shade be used to rest.
+The creatures all not happy,
+But Spitfire wasn't unwary
+And flew higher than ever.
+
+Still this wasn't quite,
+For this new boundless land,
+Had new designs been drawn,
+And fashioned an oaken bow.
+They shot good Spitfire down,
+With a bow mounted on an oak.
+They caught and tied him up
+And accused him
+Of exposing this land
+To the tyranny of the unknown,
+Of exposing indigenes
+To worlds beyond the weeds.
+But Spitfire did fight back,
+Did so knowingly in vain.
+This enraged the creatures
+Who set about as tyrants.
+
+They skinned strong Spitfire
+And made fireproof armours.
+They drank his blood and ate his flesh,
+Fenced their land with his bones.
+And set out in search,
+For more of his kind.
+Some for his blood, some for his flesh
+And some for his fireproof skin.
+But some set out in search
+Of his fire and its fuel.
+Others who stayed - some lit
+Their homes with his flames,
+Some the streets, on the misplaced evils.
+So he did not die in vain,
+And someday of the legend of
+Spitfire, the world will know
+And thus Spitfire The Great he will be dubbed,
+Who martyred for creatures unknown.
+#+END_VERSE

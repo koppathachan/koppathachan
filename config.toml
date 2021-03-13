@@ -25,6 +25,9 @@ pygmentsStyle = "vs"
 
 [markup]
   defaultMarkdownHandler= "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   dateform        = "Jan 2, 2006"

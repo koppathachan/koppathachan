@@ -2,7 +2,7 @@
 title = "Why use native Promise over Bluebird and other implementations"
 author = ["Akhil Sasidharan"]
 date = 2020-10-07T03:58:43+05:30
-lastmod = 2021-03-07T22:18:53+05:30
+lastmod = 2021-03-13T22:57:59+05:30
 tags = ["js", "javascript", "utilfunctions", "programmingbasics"]
 categories = ["programming"]
 draft = false
