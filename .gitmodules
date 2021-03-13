@@ -5,3 +5,6 @@
 	path = public
 	url = git@github.com:sasidakh/sasidakh.github.io.git
 	branch = master
+[submodule "themes/the-roots-home"]
+	path = themes/the-roots-home
+	url = https://github.com/sasidakh/the-roots-home.git

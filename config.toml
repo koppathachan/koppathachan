@@ -1,16 +1,36 @@
 baseurl      = "https://akhilsasidharan.in"
 relativeURLs = true
-title        = "My Blog"
+title        = "Somethings"
 languageCode = "en-us"
-theme        = "hello-friend-ng"
+theme        = "the-roots-home"
 paginate     = 10
 disqusShortname = "akhilsasidharan-in"
+enableInlineShortcodes = true
+  
+#enableGitInfo=true
+enableEmoji= true
+enableRobotsTXT= true
+
+# Syntax Highlight Options
+pygmentsCodeFencesGuessSyntax = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+pygmentsStyle = "vs"
+
+[author]
+  name = "Akhil Sasidharan"
+
+[pygmentsOptions]
+  linenos= true
+
+[markup]
+  defaultMarkdownHandler= "goldmark"
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
-
   # Subtitle for home
   homeSubtitle = "Writes kick-ass code"
 
@@ -21,7 +41,7 @@ disqusShortname = "akhilsasidharan-in"
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "My Blog"
+  description = "Writes kick-ass code"
   keywords = "homepage, blog"
   images = [""]
 
@@ -35,26 +55,24 @@ disqusShortname = "akhilsasidharan-in"
   [[params.social]]
     name = "twitter"
     url  = "https://twitter.com/sasidakh"
-    target = "_blank"
     
   [[params.social]]
     name = "email"
     url  = "mailto:akhilsasidharan1991@gmail.com"
-    target = "_blank"
     
   [[params.social]]
     name = "github"
     url  = "https://github.com/sasidakh"
-    target = "_blank"
     
   [[params.social]]
     name = "linkedin"
     url  = "https://www.linkedin.com/in/akhil-sasidharan-848853140/"
-    target = "_blank"
 
-  [[params.social]]
+  [[params.keys]]
     name = "gpg"
-    url  = "gpg"
+    url  = "sasidakh.gpg"
+    target = "_self"
+    handle = "97AA CBE6 DAB7 4303 63CC  DB97 1B88 672E D8C6 5D64"
     
 [taxonomies]
     category = "categories"
