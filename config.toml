@@ -52,8 +52,8 @@ pygmentsStyle = "vs"
   defaultTheme = "dark"
 #[permalinks]
 #  posts = "/posts/:year/:month/:title/"
-  footerRight = "Github: <a href=\"https://github.com/sasidakh\">Akhil Sasidharan</a>"
-  footerLeft  = "Powered by <a href=\"http://gohugo.io\">Hugo</a> and <a href=\"https://orgmode.org/\">Emacs Org Mode</a>"
+  footerRight = "<a href=\"https://github.com/sasidakh\">Akhil Sasidharan</a>"
+  footerLeft  = "Powered by <a href=\"http://gohugo.io\">Hugo</a>, <a href=\"https://orgmode.org/\">Emacs Org Mode</a> and org exporter <a href=\"https://ox-hugo.scripter.co/\">ox-hugo</a> plugin."
 
   [[params.social]]
     name = "twitter"
