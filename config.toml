@@ -75,7 +75,7 @@ pygmentsStyle = "vs"
     name = "gpg"
     url  = "sasidakh.gpg"
     target = "_self"
-    handle = "97AA CBE6 DAB7 4303 63CC  DB97 1B88 672E D8C6 5D64"
+    handle = "C5AC 1A6F DDFB 90C8 4AE4  3265 7723 DF00 F489 850F"
     
 [taxonomies]
     category = "categories"
