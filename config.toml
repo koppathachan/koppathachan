@@ -71,6 +71,10 @@ pygmentsStyle = "vs"
     name = "linkedin"
     url  = "https://www.linkedin.com/in/akhil-sasidharan-848853140/"
 
+  [[params.social]]
+    name = "npm"
+    url = "https://www.npmjs.com/~sasidakh"
+    
   [[params.keys]]
     name = "gpg"
     url  = "sasidakh.gpg"
