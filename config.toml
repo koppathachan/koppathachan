@@ -35,7 +35,6 @@ pygmentsStyle = "vs"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
   # Subtitle for home
-  homeSubtitle = "Writes kick-ass code"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -44,7 +43,7 @@ pygmentsStyle = "vs"
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "Writes kick-ass code"
+  description = "There's a <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=Yhi6y1XWb-E\">bluebird</a> in my heart"
   keywords = "homepage, blog"
   images = [""]
 
@@ -52,8 +51,8 @@ pygmentsStyle = "vs"
   defaultTheme = "dark"
 #[permalinks]
 #  posts = "/posts/:year/:month/:title/"
-  footerRight = "<a href=\"https://github.com/sasidakh\">Akhil Sasidharan</a>"
-  footerLeft  = "Powered by <a href=\"http://gohugo.io\">Hugo</a>, <a href=\"https://orgmode.org/\">Emacs Org Mode</a> and org exporter <a href=\"https://ox-hugo.scripter.co/\">ox-hugo</a> plugin."
+  footerRight = "<a target=\"_blank\" href=\"https://github.com/sasidakh\">Akhil Sasidharan</a>"
+  footerLeft  = "Powered by <a target=\"_blank\" href=\"http://gohugo.io\">Hugo</a>, <a target=\"_blank\" href=\"https://orgmode.org/\">Emacs Org Mode</a> and org exporter <a href=\"https://ox-hugo.scripter.co/\">ox-hugo</a> plugin."
 
   [[params.social]]
     name = "twitter"
