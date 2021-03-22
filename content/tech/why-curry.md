@@ -2,9 +2,9 @@
 title = "Why currying?"
 author = ["Akhil Sasidharan"]
 date = 2020-09-16T21:07:46+05:30
-lastmod = 2021-03-13T22:57:59+05:30
+lastmod = 2021-03-22T12:38:06+05:30
 tags = ["currying", "functionalprogramming", "lambdacalculus", "javascript", "js"]
-categories = ["programming"]
+categories = ["programming", "js"]
 draft = false
 weight = 2002
 +++

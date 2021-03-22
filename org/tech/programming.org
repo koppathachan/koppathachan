@@ -3,10 +3,11 @@
 #+HUGO_SECTION: ./tech
 #+HUGO_WEIGHT: auto
 #+HUGO_AUTO_SET_LASTMOD: t
+#+CATEGORY: programming
 
 * Programming :@programming:
 All posts here will have category /programming/.
-** Go. Weird And Awesome :golang:go:programmingbasics:
+** Go. Weird And Awesome :golang:go:programmingbasics:@go:
 :PROPERTIES:
 :EXPORT_DATE: 2020-05-16T21:23:40+05:30
 :EXPORT_FILE_NAME: learning-golang
@@ -121,7 +122,7 @@ func addPrint(a int, b int) {
 At work we decided, after much deliberation and debate, to use Go for one of our data processing microservices (Go concurrency model and performance benchmarks won the debate). We were designing a live data collection agent(for Managed Print Services) which consumed a huge amount of JSON data(about printers and their print count, cost etc.) from multiple paged REST APIs, categorised them based on various parameters, stored them and presented it. When we did some googling comparing Apache Spark and a custom solution in Go, we found that even though development effort for spark was lesser, the Go solution would perform better, was simpler and more efficient. The first thing that struck me was that Go is just a programming language(spark is a framework) and it was still easy to build data processing pipelines with just language constructs.
 I have come to describe OO Go as "Responsible Object Oriented Programming", because it has truly bettered the way I write OO code. When it comes to concurrency, the amazing Goroutines has made me responsible as well as fearless in my coding. I would make Go my top choice just for its general purposiveness, small learning curve, and its refreshing take on object oriented programming.
 
-** Why currying? :currying:functionalprogramming:lambdacalculus:javascript:js:
+** Why currying? :currying:functionalprogramming:lambdacalculus:javascript:js:@js:
 :PROPERTIES:
 :EXPORT_DATE: 2020-09-16T21:07:46+05:30
 :EXPORT_FILE_NAME: why-curry
@@ -199,7 +200,7 @@ Here's another fun one.
 
 In conclusion, currying if used properly makes code really readable and can produce powerful abstractions through compositions and partial application of functions. I will explore partial application examples in my next post.
 
-** Functional Programming :currying:functionalprogramming:lambdacalculus:javascript:js:
+** Functional Programming :currying:functionalprogramming:lambdacalculus:javascript:js:@js:
 :PROPERTIES:
 :EXPORT_DATE: 2020-09-18T19:13:+05:30
 :EXPORT_FILE_NAME: functional-programming
@@ -322,7 +323,7 @@ reduce function.
 Higher-order functions are essential to writing correct functional code.
 
 I hope this helps in writing better code.
-** Memoization, with a js implementation that caches recursive calls :functionalprogramming:lambdacalculus:javascript:js:memoization:memoizer:recursion:fastrecursion:
+** Memoization, with a js implementation that caches recursive calls :functionalprogramming:lambdacalculus:javascript:js:memoization:memoizer:recursion:fastrecursion:@js:
 :PROPERTIES:
 :EXPORT_DATE: 2020-09-20T23:50:30+05:30
 :EXPORT_FILE_NAME: fast-recursion-using-memoizer
@@ -494,7 +495,7 @@ slower.
 
 You can run the tests on the [[https://github.com/sasidakh/memoizer][repo]] to understand it better.
 
-** Why use native Promise over Bluebird and other implementations :js:javascript:utilfunctions:programmingbasics:
+** Why use native Promise over Bluebird and other implementations :js:javascript:utilfunctions:programmingbasics:@js:
 :PROPERTIES:
 :EXPORT_DATE: 2020-10-07T03:58:43+05:30
 :EXPORT_FILE_NAME: prefer-native-over-library

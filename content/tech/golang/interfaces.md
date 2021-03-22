@@ -1,8 +1,9 @@
 +++
 title = "Using interfaces in golang to write testable code"
 author = ["Akhil Sasidharan"]
-lastmod = 2021-03-21T21:44:50+05:30
-tags = ["programming", "golang", "interfaces", "tdd", "testing"]
+lastmod = 2021-03-22T12:38:11+05:30
+tags = ["interfaces", "tdd", "testing"]
+categories = ["programming", "go"]
 draft = false
 weight = 2001
 +++
