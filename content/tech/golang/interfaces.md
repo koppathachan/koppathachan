@@ -1,7 +1,7 @@
 +++
 title = "Using interfaces in golang to write testable code"
 author = ["Akhil Sasidharan"]
-lastmod = 2021-03-22T18:33:57+05:30
+lastmod = 2021-03-22T18:37:55+05:30
 tags = ["interfaces", "tdd", "testing"]
 categories = ["programming", "go"]
 draft = false
@@ -95,7 +95,7 @@ type pay struct {
 }
 
 // ta-da!
-func New(svc Service) Pay {
+func New(svc Service) Payment {
 	return pay{
 		// this can have multiple
 		// implementations depending on the

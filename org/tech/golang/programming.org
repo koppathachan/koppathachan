@@ -97,7 +97,7 @@ type pay struct {
 }
 
 // ta-da!
-func New(svc Service) Pay {
+func New(svc Service) Payment {
 	return pay{
 		// this can have multiple
 		// implementations depending on the
