@@ -214,4 +214,7 @@ environments.
 
 Happy Go coding.
 
-** TODO The io.Writer and io.Reader interfaces in golang :reader:writer:
+** STRT The io.Writer and io.Reader interfaces in golang :reader:writer:
+:PROPERTIES:
+:EXPORT_FILE_NAME: reader-writer-interfaces
+:END:
