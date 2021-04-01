@@ -1,4 +1,8 @@
-![github stats](https://github-readme-stats.vercel.app/api?username=sasidakh)
+![github stats](https://github-readme-stats.vercel.app/api?username=sasidakh&show_icons=true&theme=dark)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sasidakh&layout=compact&theme=dark)](https://github.com/sasidakh)
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=sasidakh&repo=trivialproxy&theme=dark)](https://github.com/sasidakh/trivialproxy)
 <!--
 **sasidakh/sasidakh** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
