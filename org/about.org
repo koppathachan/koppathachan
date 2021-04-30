@@ -8,10 +8,6 @@
 :EXPORT_DATE: 2020-10-07T03:58:43+05:30
 :EXPORT_FILE_NAME: _index
 :END:
-* About
-:PROPERTIES:
-:EXPORT_FILE_NAME: about
-:END:
 Hello, I am Akhil Sasidharan. I like to code. Thankfully I also get paid to
 code.
 
