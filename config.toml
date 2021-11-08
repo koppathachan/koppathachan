@@ -9,7 +9,7 @@ enableInlineShortcodes = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
-googleAnalytics = "UA-123-45"
+# googleAnalytics = "UA-123-45"
 #enableGitInfo=true
 enableEmoji = true
 enableRobotsTXT = true
@@ -40,7 +40,8 @@ pygmentsStyle = "vs"
   home = [ "HTML", "RSS", "JSON" ]
 
 [params]
-  # env             = "production"
+  comments        = true
+  env             = "production"
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
