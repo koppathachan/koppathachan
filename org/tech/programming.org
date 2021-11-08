@@ -337,7 +337,7 @@ programming to speed up execution by storing the results of resource
 expensive function calls. When the function is called again with the
 same input the stored result is fetched and returned. This is possible
 in functional programming languages because of the use of *pure
-functions* as discussed in this [[https://akhilsasidharan.in/posts/functional-programming/][post]]. Purely functional languages such
+functions* as discussed in this [[https://akhilsasidharan.in/tech/functional-programming/][post]]. Purely functional languages such
 as Haskell has inbuilt support for memoization. In javascript, using a
 mutable map (object, map, caches) we can implement a memoization.
 
