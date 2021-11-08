@@ -6,6 +6,11 @@
 
 * Programming :@programming:
 All posts here will have category /programming/.
+** Tech
+:PROPERTIES:
+:EXPORT_DATE: 2020-05-16T21:23:40+05:30
+:EXPORT_FILE_NAME: _index
+:END:
 ** Go. Weird And Awesome :golang:go:programmingbasics:@go:
 :PROPERTIES:
 :EXPORT_DATE: 2020-05-16T21:23:40+05:30

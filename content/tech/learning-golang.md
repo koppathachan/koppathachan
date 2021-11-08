@@ -2,7 +2,7 @@
 title = "Go. Weird And Awesome"
 author = ["Akhil Sasidharan"]
 date = 2020-05-16T21:23:40+05:30
-lastmod = 2021-11-08T22:37:40+05:30
+lastmod = 2021-11-08T23:34:43+05:30
 tags = ["golang", "go", "programmingbasics"]
 categories = ["programming", "go"]
 draft = false

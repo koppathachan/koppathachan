@@ -2,7 +2,7 @@
 title = "Functional Programming"
 author = ["Akhil Sasidharan"]
 date = 2020-09-18T00:00:00+05:30
-lastmod = 2021-11-08T22:37:43+05:30
+lastmod = 2021-11-08T23:34:20+05:30
 tags = ["currying", "functionalprogramming", "lambdacalculus", "javascript", "js"]
 categories = ["programming", "js"]
 draft = false
