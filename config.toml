@@ -13,7 +13,6 @@ googleAnalytics = "UA-123-45"
 #enableGitInfo=true
 enableEmoji = true
 enableRobotsTXT = true
-ShowCodeCopyButtons = true
 
 # Syntax Highlight Options
 pygmentsCodeFencesGuessSyntax = true
@@ -53,7 +52,10 @@ pygmentsStyle = "vs"
 
   # Enable sharing buttons, if you linke
   enableSharingButtons = true
-
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
   # Metadata mostly used in document's head
   keywords = ["blog", "functional programming"]
   images = [""]
@@ -101,7 +103,7 @@ pygmentsStyle = "vs"
     name = "instagram"
     url = "https://www.instagram.com/sasidakh"
 
-  [[params.keys]]
+  [[params.socialIcons]]
     name = "gpg"
     url  = "sasidakh.gpg"
     target = "_self"
