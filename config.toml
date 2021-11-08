@@ -2,20 +2,28 @@ baseurl      = "https://akhilsasidharan.in"
 relativeURLs = true
 title        = "Somethings"
 languageCode = "en-us"
-theme        = "the-roots-home"
+theme        = "PaperMod"
 paginate     = 10
 disqusShortname = "akhilsasidharan-in"
 enableInlineShortcodes = true
-  
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+googleAnalytics = "UA-123-45"
 #enableGitInfo=true
-enableEmoji= true
-enableRobotsTXT= true
+enableEmoji = true
+enableRobotsTXT = true
+ShowCodeCopyButtons = true
 
 # Syntax Highlight Options
 pygmentsCodeFencesGuessSyntax = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 pygmentsStyle = "vs"
+
+[minify]
+  disableXML = true
+  minifyOutput = true
 
 [author]
   name = "Akhil Sasidharan"
@@ -29,7 +37,11 @@ pygmentsStyle = "vs"
     [markup.goldmark.renderer]
       unsafe = true
 
+[outputs]
+  home = [ "HTML", "RSS", "JSON" ]
+
 [params]
+  # env             = "production"
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
@@ -44,36 +56,52 @@ pygmentsStyle = "vs"
 
   # Metadata mostly used in document's head
   description = "There's a <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=Yhi6y1XWb-E\">bluebird</a> in my heart"
-  keywords = "homepage, blog"
+  keywords = ["blog", "functional programming"]
   images = [""]
 
   # Default theme "light" or "dark"
-  defaultTheme = "dark"
+  defaultTheme = "auto"
 #[permalinks]
 #  posts = "/posts/:year/:month/:title/"
   footerRight = "<a target=\"_blank\" href=\"https://github.com/sasidakh\">Akhil Sasidharan</a>"
   footerLeft  = "Powered by <a target=\"_blank\" href=\"http://gohugo.io\">Hugo</a>, <a target=\"_blank\" href=\"https://orgmode.org/\">Emacs Org Mode</a> and org exporter <a href=\"https://ox-hugo.scripter.co/\">ox-hugo</a> plugin."
 
-  [[params.social]]
+  [params.homeInfoParams]
+    Title = "Hi there 👋"
+    Content = "I am Akhil Sasidharan. I like to code. Thankfully I also get paid to code."
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = [ "title", "permalink", "summary", "content" ]
+
+  [[params.socialIcons]]
     name = "twitter"
     url  = "https://twitter.com/sasidakh"
     
-  [[params.social]]
+  [[params.socialIcons]]
     name = "email"
     url  = "mailto:akhilsasidharan1991@gmail.com"
     
-  [[params.social]]
+  [[params.socialIcons]]
     name = "github"
     url  = "https://github.com/sasidakh"
     
-  [[params.social]]
+  [[params.socialIcons]]
     name = "linkedin"
-    url  = "https://www.linkedin.com/in/akhil-sasidharan-848853140/"
+    url  = "https://www.linkedin.com/in/akhil-sasidharan-848853140"
 
-  [[params.social]]
+  [[params.socialIcons]]
     name = "npm"
-    url = "https://www.npmjs.com/~sasidakh"
-    
+    url = "https://www.npmjs.com/sasidakh"
+
+  [[params.socialIcons]]
+    name = "instagram"
+    url = "https://www.instagram.com/sasidakh"
+
   [[params.keys]]
     name = "gpg"
     url  = "sasidakh.gpg"
@@ -103,10 +131,27 @@ pygmentsStyle = "vs"
 
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "about/"
+    identifier = "tech"
+    name       = "Tech"
+    url        = "tech/"
+    weight     = 10
   [[menu.main]]
-    identifier = "posts"
-    name       = "Posts"
-    url        = "posts/"
+    identifier = "poems"
+    name       = "Poems"
+    url        = "poems/"
+    weight     = 20
+  [[menu.main]]
+    identifier = "categories"
+    name       = "Categories"
+    url        = "categories/"
+    weight     = 30
+  [[menu.main]]
+    identifier = "tags"
+    name       = "Tags"
+    url        = "tags/"
+    weight     = 40
+  [[menu.main]]
+    identifier = "search"
+    name       = "Search"
+    url        = "search/"
+    weight     = 50

@@ -2,11 +2,10 @@
 title = "Why currying?"
 author = ["Akhil Sasidharan"]
 date = 2020-09-16T21:07:46+05:30
-lastmod = 2021-03-22T12:38:06+05:30
+lastmod = 2021-11-08T22:37:40+05:30
 tags = ["currying", "functionalprogramming", "lambdacalculus", "javascript", "js"]
 categories = ["programming", "js"]
 draft = false
-weight = 2002
 +++
 
 Currying is the transformation of a function written like this

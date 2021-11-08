@@ -2,11 +2,10 @@
 title = "Why use native Promise over Bluebird and other implementations"
 author = ["Akhil Sasidharan"]
 date = 2020-10-07T03:58:43+05:30
-lastmod = 2021-03-22T12:38:07+05:30
+lastmod = 2021-11-08T22:37:43+05:30
 tags = ["js", "javascript", "utilfunctions", "programmingbasics"]
 categories = ["programming", "js"]
 draft = false
-weight = 2005
 +++
 
 > 'Brevity is the soul of wit'

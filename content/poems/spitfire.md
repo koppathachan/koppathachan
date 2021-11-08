@@ -2,10 +2,9 @@
 title = "Spitfire"
 author = ["Akhil Sasidharan"]
 date = 2015-03-09
-lastmod = 2021-03-13T23:23:50+05:30
-tags = ["poetry"]
+lastmod = 2021-11-08T21:51:51+05:30
+categories = ["poetry"]
 draft = false
-weight = 2001
 +++
 
 <p class="verse">

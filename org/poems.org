@@ -1,10 +1,9 @@
 #+TITLE: Poems
 #+HUGO_BASE_DIR: ../
 #+HUGO_SECTION: ./poems
-#+HUGO_WEIGHT: auto
 #+HUGO_AUTO_SET_LASTMOD: t
 
-* Poems :poetry:
+* Poems :@poetry:
 ** Spitfire
 :PROPERTIES:
 :EXPORT_DATE: 2015-03-09

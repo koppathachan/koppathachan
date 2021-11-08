@@ -1,11 +1,10 @@
 +++
 title = "Using interfaces in golang to write testable code"
 author = ["Akhil Sasidharan"]
-lastmod = 2021-03-22T18:33:57+05:30
+lastmod = 2021-11-08T22:37:59+05:30
 tags = ["interfaces", "tdd", "testing"]
 categories = ["programming", "go"]
-draft = false
-weight = 2001
+draft = true
 +++
 
 I like golang's interfaces. They're just a bunch of function signatures. Simple.

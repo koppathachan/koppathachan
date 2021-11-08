@@ -2,11 +2,10 @@
 title = "Memoization, with a js implementation that caches recursive calls"
 author = ["Akhil Sasidharan"]
 date = 2020-09-20T23:50:30+05:30
-lastmod = 2021-03-22T12:38:07+05:30
+lastmod = 2021-11-08T22:37:43+05:30
 tags = ["functionalprogramming", "lambdacalculus", "javascript", "js", "memoization", "memoizer", "recursion", "fastrecursion"]
 categories = ["programming", "js"]
 draft = false
-weight = 2004
 +++
 
 Memoization is an **optimization technique** used in functional

@@ -1,0 +1,5 @@
+#+TITLE: Search
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: ./
+#+HUGO_LAYOUT: search
+#+HUGO_SUMMARY: search

@@ -1,15 +1,10 @@
 #+TITLE: Programming
 #+HUGO_BASE_DIR: ../../../
 #+HUGO_SECTION: ./tech/golang
-#+HUGO_WEIGHT: auto
 #+HUGO_AUTO_SET_LASTMOD: t
 
-* ~
-:PROPERTIES:
-:EXPORT_FILE_NAME: _index
-:END:
 * Programming :@programming:@go:
-** Using interfaces in golang to write testable code :interfaces:tdd:testing:
+** TODO Using interfaces in golang to write testable code :interfaces:tdd:testing:
 :PROPERTIES:
 :EXPORT_FILE_NAME: interfaces
 :END:

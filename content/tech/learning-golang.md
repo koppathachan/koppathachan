@@ -2,11 +2,10 @@
 title = "Go. Weird And Awesome"
 author = ["Akhil Sasidharan"]
 date = 2020-05-16T21:23:40+05:30
-lastmod = 2021-03-22T12:38:06+05:30
+lastmod = 2021-11-08T22:37:40+05:30
 tags = ["golang", "go", "programmingbasics"]
 categories = ["programming", "go"]
 draft = false
-weight = 2001
 +++
 
 November 10th, 2019 marked the 10th anniversary of this awesome programming language called Go. The Go community in Bangalore organized a meetup (which was also their 50th meetup) hosted by SAP Labs. The meetup introduced me to gRPC and writing custom plugins for gRPC. The meetup also introduced me to how the Go runtime scheduler works and how it has achieved high performance concurrency. I was just a beginner in Go and starting to fall in love with the language, and knowing the genesis story of Go helped me understand some of the weirdness I felt about the language initially.

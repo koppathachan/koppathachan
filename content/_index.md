@@ -7,8 +7,5 @@ draft = false
 weight = 1001
 +++
 
-Hello, I am Akhil Sasidharan. I like to code. Thankfully I also get paid to
-code.
-
-This blog is an attempt to document and share what I learn to whoever will
+This blog is an attempt to document and share what I learn to whomever will
 listen.

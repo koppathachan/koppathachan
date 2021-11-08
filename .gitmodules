@@ -1,10 +1,7 @@
-[submodule "themes/hello-friend-ng"]
-	path = themes/hello-friend-ng
-	url = git@github.com:sasidakh/hugo-theme-hello-friend-ng.git
 [submodule "public"]
 	path = public
 	url = git@github.com:sasidakh/sasidakh.github.io.git
 	branch = master
-[submodule "themes/the-roots-home"]
-	path = themes/the-roots-home
-	url = https://github.com/sasidakh/the-roots-home.git
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
