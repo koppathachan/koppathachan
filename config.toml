@@ -55,7 +55,6 @@ pygmentsStyle = "vs"
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "There's a <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=Yhi6y1XWb-E\">bluebird</a> in my heart"
   keywords = ["blog", "functional programming"]
   images = [""]
 
