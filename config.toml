@@ -82,7 +82,7 @@ pygmentsStyle = "vs"
 
   [[params.socialIcons]]
     name = "twitter"
-    url  = "https://twitter.com/sasidakh"
+    url  = "https://twitter.com/koppathachan"
     
   [[params.socialIcons]]
     name = "email"
@@ -90,7 +90,7 @@ pygmentsStyle = "vs"
     
   [[params.socialIcons]]
     name = "github"
-    url  = "https://github.com/sasidakh"
+    url  = "https://github.com/koppathachan"
     
   [[params.socialIcons]]
     name = "linkedin"
@@ -98,15 +98,15 @@ pygmentsStyle = "vs"
 
   [[params.socialIcons]]
     name = "npm"
-    url = "https://www.npmjs.com/sasidakh"
+    url = "https://www.npmjs.com/~sasidakh"
 
   [[params.socialIcons]]
     name = "instagram"
-    url = "https://www.instagram.com/sasidakh"
+    url = "https://www.instagram.com/koppathachan"
 
   [[params.socialIcons]]
     name = "gpg"
-    url  = "sasidakh.gpg"
+    url  = "koppathachan.gpg"
     target = "_self"
     handle = "C5AC 1A6F DDFB 90C8 4AE4  3265 7723 DF00 F489 850F"
     
